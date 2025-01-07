@@ -33,8 +33,14 @@ public class d {
 
 		Arrays.sort(arr);
 		int same = 1;
-		for(int j = 1; j < arr.length; j++) {
-			if(arr[j] == arr[j-1]) {
+		for(int j = 0; j < arr.length; j++) {
+			if(j > arr.length - 1 && arr[j-1] == arr[j]) {
+				same++;
+				System.out.println(arr[j] + " Occoured " + same + " times.");
+				return;
+			}
+
+			if(arr[j] == arr[j+1]) {
 				same++;
 				continue;
 			} else {
