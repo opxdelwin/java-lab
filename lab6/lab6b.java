@@ -9,7 +9,7 @@ public class lab6b {
             Number num = new Number(n);
         } catch (NegativeNumberException e) {
             System.out.println("Error Type: NegativeNumberException");
-            System.out.println("Error Message: " + e.message);
+            System.out.println("Error Message: " + e.getMessage());
             return;
         }
     }
@@ -28,8 +28,7 @@ class Number {
 }
 
 class NegativeNumberException extends Exception {
-    String message;
     public NegativeNumberException(String message) {
-        this.message = message;
+        super(message)
     }
 }
